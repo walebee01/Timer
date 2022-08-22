@@ -115,9 +115,7 @@
     document.querySelector('.switch').addEventListener('click', () => {
         console.log('Switch');
     })
-    document.querySelector('.something').addEventListener('click', () => {
-        console.log('Something');
-    })
+   
 
 
 }
