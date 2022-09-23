@@ -91,11 +91,7 @@
 
     }
 
-    /*
-    function resumeTimer() {
-       this.startTimer();
-    }
-    */
+  
 
     document.querySelector('.start').addEventListener('click', () => {
         startTimer();
