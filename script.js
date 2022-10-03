@@ -50,7 +50,6 @@
     }
 
 
-
     //function for the stop watch
 
     const startTimer = () => {
@@ -87,17 +86,13 @@
         delete this.interval;
     }
 
-
     function pauseTimer() {
         clearInterval(this.interval);
         delete this.interval;
-        
-
     }
 
     function resumeTimer() {
         this.startTimer();
-
     }
 
 
@@ -108,11 +103,7 @@
         pauseTimer()
     });
     
-   
     document.querySelector('.reset').addEventListener('click', () => {
         resetTimer();
     })
-   
-
-
 }
