@@ -46,12 +46,11 @@
         time.innerHTML = `${hours % 12}:${minutes}:${seconds}`;
 
         setTimeout("getTime()", 1000);
-        console.log(hours);
+        
     }
 
 
     //function for the stop watch
-
     const startTimer = () => {
         let totalSeconds = 0;
         let milliseconds =0;
