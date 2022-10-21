@@ -1,3 +1,3 @@
-# Stopwatch 
-It display Stopwatch, time and Calendar date
+# Countdown 
+This is a countdown Timer
 
