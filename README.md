@@ -1,3 +1,3 @@
-# Countdown 
-This is a countdown Timer
+# Stopwatch/Time
+
 
