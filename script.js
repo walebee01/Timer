@@ -50,32 +50,28 @@
     }
 
 
+
     //function for the stop watch
+    let timer = [0,0,0,0];
     const startTimer = () => {
-        let totalSeconds = 0;
-        let milliseconds =0;
         if (!this.interval) {
-            this.interval = setInterval(function() {
-                milliseconds++
-                ++totalSeconds;
-                let hour = Math.floor(totalSeconds / 3600);
-                let minutes = Math.floor((totalSeconds - hour * 3600) / 60);
-                let seconds = totalSeconds - (hour * 3600 + minutes * 60);
-                let secs = milliseconds 
+            this.interval = setInterval( function() {
+                let showTimer = document.querySelector('.timer')
+                let currentTme = `${timer[0]} : ${timer[1]} : ${timer[2]}`;
+                showTimer.innerHTML = currentTme;
+                timer[3]++;
 
-                if (hour < 10) {
-                    hour = "0" + hour;
+                timer[0] = Math.floor((timer[3]/100)/60);
+                timer[1] = Math.floor((timer[3]/100) - (timer[0] * 60));
+                timer[2] = Math.floor((timer[3] - (timer[1]) * 100) - (timer[0] * 6000));
+               
+                for(let i =0; i < timer.length; i++){
+                    if (timer[i] < 10) {
+                        timer[i] = "0" + timer[i];
+                        console.log(timer[i])
+                    }
                 }
-                if (minutes < 10) {
-                    minutes = '0' + minutes;
-
-                }
-                if (seconds < 10) {
-                    seconds = '0' + seconds;
-                }
-
-                document.querySelector(".timer").innerHTML = `${hour}:${minutes}:${seconds}`;
-            }, 1000);
+            }, 10);
         }
     }
 
@@ -92,6 +88,7 @@
 
     function resumeTimer() {
         this.startTimer();
+
     }
 
 
@@ -102,7 +99,11 @@
         pauseTimer()
     });
     
+   
     document.querySelector('.reset').addEventListener('click', () => {
         resetTimer();
     })
+   
+
+
 }
